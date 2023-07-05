@@ -17,7 +17,9 @@ export default function ContactForm() {
     const name = form.elements.name.value;
     const number = form.elements.number.value;
 
-    const isContactInclude = contacts.some(contact => contact.name === name);
+    const isContactInclude = contacts.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
 
     isContactInclude
       ? toast.error(
